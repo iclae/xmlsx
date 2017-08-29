@@ -1,0 +1,12 @@
+{
+  "name": "xmlsx",
+  "version": "0.1.0",
+  "description": "xlsx is equal xml",
+  "main": "xmlsx.js",
+  "repository": {
+    "url": "https://github.com/iclae/xmlsx.git",
+    "type": "git"
+  },
+  "author": "lix <iclae0@gmail.com>",
+  "license": "MIT"
+}
