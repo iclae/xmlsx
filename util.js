@@ -3,6 +3,7 @@ var Zip = require('adm-zip')
 var async = require('async')
 var each = require('lodash.foreach')
 var fs = require('fs')
+var path = require('path')
 
 var xmlBuilder = new xml2js.Builder()
 var zip = new Zip()
@@ -17,10 +18,10 @@ function closeSet(sets, cb) {
   async.parallel(
     [
       function(next) {
-        fs.writeFile('./xmls/xl/worksheets/sheet1.xml', formatStr, next)
+        fs.writeFile('node_modules/xmlsx/xmls/xl/worksheets/sheet1.xml', formatStr, next)
       },
       function(next) {
-        fs.writeFile('./xmls/xl/sharedStrings.xml', sheetData, next)
+        fs.writeFile('node_modules/xmlsx/xmls/xl/sharedStrings.xml', sheetData, next)
       },
     ],
     function(err) {
@@ -34,7 +35,7 @@ function closeSet(sets, cb) {
  * @param {function} cb callback cb(buffer)
  */
 function buildXlsx(cb) {
-  zip.addLocalFolder('./xmls')
+  zip.addLocalFolder('node_modules/xmlsx/xmls')
   zip.toBuffer(
     function(buf) {
       cb(null, buf)
