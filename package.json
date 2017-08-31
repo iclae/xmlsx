@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "description": "xlsx is equal xml",
   "main": "xmlsx.js",
+  "keywords": ["xml", "xlsx", "excel", "node", "js"],
   "repository": {
     "url": "https://github.com/iclae/xmlsx.git",
     "type": "git"
+  },
+  "engines": {
+    "node": ">=0.12.7"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "async": "^2.5.0",
+    "lodash.foreach": "^4.5.0",
+    "xml2js": "0.4.17"
   },
   "author": "lix <iclae0@gmail.com>",
   "license": "MIT"
