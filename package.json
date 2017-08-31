@@ -1,6 +1,6 @@
 {
   "name": "xmlsx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "xlsx is equal xml",
   "main": "xmlsx.js",
   "keywords": ["xml", "xlsx", "excel", "node", "js"],
