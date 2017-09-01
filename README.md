@@ -6,12 +6,12 @@ xmlsx = xml + xlsx
     var xmlsx = new XMLSX()
 
     xmlsx
-     .frozen('2')
-     .write([
+     .frozen('2') // 冻结某行以上
+     .write([ // 输入表格数据
        ['我', '秦始皇', '打钱'],
        ['aa', 'bb']]
       )
-     .valid([
+     .valid([ // 数据验证
        { A1: [2, 4, 6] },
        { B5: ['f1', 'f4', 'qb'] }
       ])
