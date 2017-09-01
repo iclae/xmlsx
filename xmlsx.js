@@ -1,11 +1,14 @@
-var sheet = require('./temp/sheet')
-var data = require('./temp/data')
-var util = require('./util')
+// source
+var sheet = require('./lib/temp/sheet')
+var data = require('./lib/temp/data')
 
-// func
-var Frozen = require('./mod/frozen')
-var Write = require('./mod/write')
-var Valid = require('./mod/valid')
+// util
+var util = require('./lib/util')
+
+// method
+var Frozen = require('./lib/mod/frozen')
+var Entry = require('./lib/mod/entry')
+var Valid = require('./lib/mod/valid')
 
 // main
 var XMLSX = function() {
@@ -14,7 +17,7 @@ var XMLSX = function() {
 }
 
 // final
-XMLSX.prototype.getXlsx = function(callback) {
+XMLSX.prototype.done = function(callback) {
   util.closeSet(
     {
       formats: this._formats,
@@ -32,8 +35,8 @@ XMLSX.prototype.frozen = function(range) {
 }
 
 // write data [[row],[row],[row]]
-XMLSX.prototype.write = function(data) {
-  var i = new Write(data)
+XMLSX.prototype.entry = function(data) {
+  var i = new Entry(data)
   i.setSheet({
     formats: this._formats,
     sheetData: this._sheetData,
