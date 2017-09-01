@@ -1,7 +1,7 @@
 {
   "name": "xmlsx",
-  "version": "0.1.1",
-  "description": "xlsx is equal xml",
+  "version": "0.1.2",
+  "description": "xmlsx = xml + xlsx, xmlsx can make xlsx with format",
   "main": "xmlsx.js",
   "keywords": ["xml", "xlsx", "excel", "node", "js"],
   "repository": {
