@@ -8,6 +8,10 @@ var path = require('path')
 var xmlBuilder = new xml2js.Builder()
 var zip = new Zip()
 
+var FORMAT = path.join(__dirname, './xmls/xl/worksheets/sheet1.xml')
+var DATA = path.join(__dirname, './xmls/xl/sharedStrings.xml')
+var XMLS = path.join(__dirname, './xmls')
+
 function closeSet(sets, cb) {
   var formats = sets.formats
   var data = sets.sheetData
@@ -18,10 +22,10 @@ function closeSet(sets, cb) {
   async.parallel(
     [
       function(next) {
-        fs.writeFile('node_modules/xmlsx/xmls/xl/worksheets/sheet1.xml', formatStr, next)
+        fs.writeFile(FORMAT, formatStr, next)
       },
       function(next) {
-        fs.writeFile('node_modules/xmlsx/xmls/xl/sharedStrings.xml', sheetData, next)
+        fs.writeFile(DATA, sheetData, next)
       },
     ],
     function(err) {
@@ -35,7 +39,7 @@ function closeSet(sets, cb) {
  * @param {function} cb callback cb(buffer)
  */
 function buildXlsx(cb) {
-  zip.addLocalFolder('node_modules/xmlsx/xmls')
+  zip.addLocalFolder(XMLS)
   zip.toBuffer(
     function(buf) {
       cb(null, buf)
