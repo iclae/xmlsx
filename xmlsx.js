@@ -1,7 +1,3 @@
-// source
-var sheet = require('./lib/temp/sheet')
-var data = require('./lib/temp/data')
-
 // util
 var util = require('./lib/util')
 
@@ -11,22 +7,20 @@ var Entry = require('./lib/mod/entry')
 var Valid = require('./lib/mod/valid')
 
 // main
-var XMLSX = function() {
-  this._formats = sheet.getSheet()
-  this._sheetData = data.getData()
+var XMLSX = function(init) {
+  var initData = util.readXMLbuffer(init)
+  this._formats = initData.formats
+  this._sheetData = initData.sheetData
 }
 
-// final
-XMLSX.prototype.done = function(callback) {
-  util.closeSet(
-    {
-      formats: this._formats,
-      sheetData: this._sheetData,
-    },
-    callback
-  )
+XMLSX.prototype._getSheet = function() {
+  return {
+    formats: this._formats,
+    sheetData: this._sheetData,
+  }
 }
 
+// ------- step func
 // frozen row or col
 XMLSX.prototype.frozen = function(range) {
   var f = new Frozen(range)
@@ -49,6 +43,32 @@ XMLSX.prototype.valid = function(validArray) {
   var v = new Valid(validArray)
   v.setSheet(this._formats)
   return this
+}
+
+// ------- final func
+// get xlsx buffer
+XMLSX.prototype.done = function(callback) {
+  util.closeSet(
+    {
+      formats: this._formats,
+      sheetData: this._sheetData,
+    },
+    callback
+  )
+}
+
+// get xlsx object
+XMLSX.prototype.output = function() {
+  var format = {
+    frozen: Frozen.analysis(this._formats),
+    valid: Valid.analysis(this._formats),
+  }
+  var sheetData = Entry.analysis(this._getSheet())
+  return {
+    format: format,
+    sheetData: sheetData,
+    colStyleData: util.getColStyle(sheetData),
+  }
 }
 
 module.exports = XMLSX
