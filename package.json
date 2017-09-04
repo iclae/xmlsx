@@ -1,7 +1,7 @@
 {
   "name": "xmlsx",
-  "version": "0.1.2",
-  "description": "xmlsx = xml + xlsx, xmlsx can make xlsx with format",
+  "version": "0.2.0",
+  "description": "xmlsx = xml + xlsx, xmlsx can make & read xlsx with format",
   "main": "xmlsx.js",
   "keywords": ["xml", "xlsx", "excel", "node", "js"],
   "repository": {
@@ -15,6 +15,7 @@
     "adm-zip": "^0.4.7",
     "async": "^2.5.0",
     "lodash.foreach": "^4.5.0",
+    "lodash.unzip": "^3.4.0",
     "xml2js": "0.4.17"
   },
   "author": "lix <iclae0@gmail.com>",
