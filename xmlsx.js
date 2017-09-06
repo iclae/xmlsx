@@ -1,74 +1,48 @@
-// util
 var util = require('./lib/util')
+var Store = require('./lib/store')
 
-// method
+// mod
 var Frozen = require('./lib/mod/frozen')
 var Entry = require('./lib/mod/entry')
 var Valid = require('./lib/mod/valid')
 
 // main
-var XMLSX = function(init) {
-  var initData = util.readXMLbuffer(init)
-  this._formats = initData.formats
-  this._sheetData = initData.sheetData
-}
-
-XMLSX.prototype._getSheet = function() {
-  return {
-    formats: this._formats,
-    sheetData: this._sheetData,
-  }
+function XMLSX(buffer) {
+  this._store = new Store()
+  this._store.cache(buffer)
 }
 
 // ------- step func
-// frozen row or col
+// frozen row TODO: frozen col
 XMLSX.prototype.frozen = function(range) {
   var f = new Frozen(range)
-  f.setFrozen(this._formats)
+  f.setFrozen(this._store)
   return this
 }
 
 // write data [[row],[row],[row]]
 XMLSX.prototype.entry = function(data) {
-  var i = new Entry(data)
-  i.setSheet({
-    formats: this._formats,
-    sheetData: this._sheetData,
-  })
+  var e = new Entry(data)
+  e.setSheet(this._store)
   return this
 }
 
-// valid data [{A1: [1, 2, 3]}]
+// valid data [{A1: [1, 2, 3]}, {'B1:B100': [a, b, c]}]
 XMLSX.prototype.valid = function(validArray) {
   var v = new Valid(validArray)
-  v.setSheet(this._formats)
+  v.setSheet(this._store)
   return this
 }
 
 // ------- final func
 // get xlsx buffer
 XMLSX.prototype.done = function(callback) {
-  util.closeSet(
-    {
-      formats: this._formats,
-      sheetData: this._sheetData,
-    },
-    callback
-  )
+  this._store.build(callback)
 }
 
 // get xlsx object
 XMLSX.prototype.output = function() {
-  var format = {
-    frozen: Frozen.analysis(this._formats),
-    valid: Valid.analysis(this._formats),
-  }
-  var sheetData = Entry.analysis(this._getSheet())
-  return {
-    format: format,
-    sheetData: sheetData,
-    colStyleData: util.getColStyle(sheetData),
-  }
+  return this._store.clear()
 }
 
 module.exports = XMLSX
