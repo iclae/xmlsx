@@ -3,11 +3,11 @@ xmlsx = xml + xlsx
 
 ## Method
 
-* frozen  frozen a line 冻结某行以上
-* entry input entry 输入表格数据
-* valid set valid 数据验证
-* output get xlsx json 解析xlsx并输出内容
-* done get xlsx buffer 获取设定后的xlsx
+* frozen:  (frozen a line) 冻结某行以上
+* entry: (input entry) 输入表格数据
+* valid: (set valid) 数据验证
+* output: (get xlsx json) 解析xlsx并输出内容
+* done: (get xlsx buffer) 获取设定后的xlsx
 
 ## Example
 ### Make Xlsx
@@ -21,7 +21,7 @@ xmlsx = xml + xlsx
         ['', 'space', ],
         ['', '', '@_@']
       ])
-      .frozen('5'//or 5)
+      .frozen('5')
       .valid([
         { A1: [male, famale] }, 
         { B5: ['JS', 'Node', '东北话'] }, 
