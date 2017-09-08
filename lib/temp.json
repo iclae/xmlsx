@@ -1,0 +1,126 @@
+{
+  "sst": {
+    "$": {
+      "count": "1",
+      "uniqueCount": "1",
+      "xmlns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+    },
+    "si": []
+  },
+  "styleSheet": {
+    "$": {
+      "xmlns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+      "xmlns:mc": "http://schemas.openxmlformats.org/markup-compatibility/2006",
+      "xmlns:x14ac": "http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac"
+    },
+    "borders": [
+      {
+        "$": {
+          "count": "1"
+        },
+        "border": [
+          {
+            "bottom": [""],
+            "left": [""],
+            "right": [""],
+            "top": [""]
+          }
+        ]
+      }
+    ],
+    "cellStyleXfs": [
+      {
+        "$": {
+          "count": "0"
+        },
+        "xf": []
+      }
+    ],
+    "cellXfs": [
+      {
+        "$": {
+          "count": "0"
+        },
+        "xf": []
+      }
+    ],
+    "dxfs": [
+      {
+        "$": {
+          "count": "0"
+        }
+      }
+    ],
+    "fills": {
+      "$": {
+        "count": "1"
+      },
+      "fill": []
+    },
+    "fonts": {
+      "$": {
+        "count": "1"
+      },
+      "font": []
+    },
+    "numFmts": [
+      {
+        "$": {
+          "count": "0"
+        }
+      }
+    ]
+  },
+  "worksheet": {
+    "$": {
+      "xmlns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+      "xmlns:mc": "http://schemas.openxmlformats.org/markup-compatibility/2006",
+      "xmlns:mv": "urn:schemas-microsoft-com:mac:vml",
+      "xmlns:mx": "http://schemas.microsoft.com/office/mac/excel/2008/main",
+      "xmlns:r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+      "xmlns:x14": "http://schemas.microsoft.com/office/spreadsheetml/2009/9/main",
+      "xmlns:x14ac": "http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac",
+      "xmlns:xm": "http://schemas.microsoft.com/office/excel/2006/main"
+    },
+    "dataValidations": [
+      {
+        "dataValidation": []
+      }
+    ],
+    "sheetData": [
+      {
+        "row": []
+      }
+    ],
+    "sheetViews": [
+      {
+        "sheetView": [
+          {
+            "$": {
+              "workbookViewId": "0"
+            },
+            "pane": [
+              {
+                "$": {
+                  "activePane": "bottomLeft",
+                  "state": "frozen",
+                  "topLeftCell": "A1",
+                  "ySplit": "0"
+                }
+              }
+            ],
+            "selection": [
+              {
+                "$": {
+                  "activeCell": "B2",
+                  "pane": "bottomLeft",
+                  "sqref": "B2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

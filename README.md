@@ -3,11 +3,11 @@ xmlsx = xml + xlsx
 
 ## Method
 
-* frozen 冻结某行以上
-* entry 输入表格数据
-* valid 数据验证
-* output 解析xlsx并输出内容
-* done 获取设定后的xlsx
+* frozen  frozen a line 冻结某行以上
+* entry input entry 输入表格数据
+* valid set valid 数据验证
+* output get xlsx json 解析xlsx并输出内容
+* done get xlsx buffer 获取设定后的xlsx
 
 ## Example
 ### Make Xlsx
@@ -15,9 +15,13 @@ xmlsx = xml + xlsx
 
     xmlsx
       .entry([
-        ['我', '秦始皇', '打钱'], 
-        ['foo', 'bar']
+        ['1', 2, '三'], 
+        ['foo', 'bar'],
+        [],
+        ['', 'space', ],
+        ['', '', '@_@']
       ])
+      .frozen('5'//or 5)
       .valid([
         { A1: [male, famale] }, 
         { B5: ['JS', 'Node', '东北话'] }, 
@@ -28,7 +32,14 @@ xmlsx = xml + xlsx
       })
 
 ### Read Xlsx
-    fs.readFile('test.xlsx', function(err, data) {
-      var xmlsx = new XMLSX(data)
-      console.log(xmlsx.output())
+    fs.readFile('test.xlsx', function(err, buf) {
+      var xmlsx = new XMLSX(buf)
+      xmlsx.output()
+      //-> { entry: [...] }
+
+      xmlsx.frozen().output()
+      //-> { ......, frozen: '5' }
+
+      xmlsx.valid().frozen().output()
+      //-> { ......, valid: [{ A1: [ male, famale ]}] }
     })
