@@ -12,4 +12,7 @@ yarn-error.log*
 node_modules
 
 # output
-.xlsx
+*.xlsx
+
+# test
+local-test.js
