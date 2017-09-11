@@ -33,9 +33,15 @@ xmlsx = xml + xlsx
       @type final
       @return [Buffer] xlsxBuffer
 
+* getCell: get a xlsx axis (转换xy坐标为xlsx的位置)
+
+      @type tool
+      @param [Number, Number] x,y start on 0
+      @return [String] cell eg:'A1'
+
 ## Example
 ### Make Xlsx
-    var xmlsx = new XMLSX()
+    var xmlsx = new Xmlsx()
 
     xmlsx
       .entry([
@@ -58,7 +64,7 @@ xmlsx = xml + xlsx
 
 ### Read Xlsx
     fs.readFile('test.xlsx', function(err, buf) {
-      var xmlsx = new XMLSX(buf)
+      var xmlsx = new Xmlsx(buf)
       xmlsx.output()
       //-> { entry: [[...], [...], ...] }
 
@@ -68,3 +74,7 @@ xmlsx = xml + xlsx
       xmlsx.valid().frozen().output()
       //-> { ..., valid: [{ A1: [ male, famale ]}] }
     })
+
+### Tools
+      Xmlsx.getCell(0, 0)   //-> 'A1'
+      Xmlsx.getCell(1, 2)   //-> 'B3'

@@ -1,5 +1,5 @@
 var Store = require('./lib/store')
-
+var util = require('./lib/util')
 // mods
 var frozen = require('./lib/mod/frozen')
 var valid = require('./lib/mod/valid')
@@ -10,6 +10,9 @@ function XMLSX(buffer) {
   this._store = new Store()
   this._store.cache(buffer)
 }
+
+// Objec func
+XMLSX.getCell = util.getCellByXY
 
 // ------- step func
 // write data [[row],[row],[row]]
