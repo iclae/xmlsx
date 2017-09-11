@@ -3,6 +3,7 @@ var Store = require('./lib/store')
 // mods
 var frozen = require('./lib/mod/frozen')
 var valid = require('./lib/mod/valid')
+var hide = require('./lib/mod/hide')
 
 // main
 function XMLSX(buffer) {
@@ -29,9 +30,16 @@ XMLSX.prototype.valid = function(validArray) {
   return this
 }
 
+// hide cell 'A1'
+XMLSX.prototype.hide = function(cell) {
+  hide.setHide(this._store, cell)
+  return this
+}
+
 // ------- final func
 // get xlsx buffer
 XMLSX.prototype.done = function(callback) {
+  this._store.compile()
   this._store.build(callback)
 }
 
