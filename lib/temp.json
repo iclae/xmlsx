@@ -1,8 +1,8 @@
 {
   "sst": {
     "$": {
-      "count": "1",
-      "uniqueCount": "1",
+      "count": "0",
+      "uniqueCount": "0",
       "xmlns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
     },
     "si": []
@@ -31,17 +31,82 @@
     "cellStyleXfs": [
       {
         "$": {
-          "count": "0"
+          "count": "1"
         },
-        "xf": []
+        "xf": [
+          {
+            "$": {
+              "applyAlignment": "1",
+              "applyFont": "1",
+              "borderId": "0",
+              "fillId": "0",
+              "fontId": "0",
+              "numFmtId": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "cellStyles": [
+      {
+        "$": {
+          "count": "1"
+        },
+        "cellStyle": [
+          {
+            "$": {
+              "builtinId": "0",
+              "name": "Normal",
+              "xfId": "0"
+            }
+          }
+        ]
       }
     ],
     "cellXfs": [
       {
         "$": {
-          "count": "0"
+          "count": "3"
         },
-        "xf": []
+        "xf": [
+          {
+            "$": {
+              "applyAlignment": "1",
+              "applyFont": "1",
+              "borderId": "0",
+              "fillId": "0",
+              "fontId": "0",
+              "numFmtId": "0",
+              "xfId": "0"
+            },
+            "alignment": [""]
+          },
+          {
+            "$": {
+              "applyAlignment": "1",
+              "applyFont": "1",
+              "borderId": "0",
+              "fillId": "0",
+              "fontId": "1",
+              "numFmtId": "0",
+              "xfId": "0"
+            },
+            "alignment": [""]
+          },
+          {
+            "$": {
+              "applyAlignment": "1",
+              "applyFont": "1",
+              "applyNumberFormat": "1",
+              "borderId": "0",
+              "fillId": "0",
+              "fontId": "1",
+              "numFmtId": "164",
+              "xfId": "0"
+            },
+            "alignment": [""]
+          }
+        ]
       }
     ],
     "dxfs": [
@@ -51,23 +116,77 @@
         }
       }
     ],
-    "fills": {
-      "$": {
-        "count": "1"
-      },
-      "fill": []
-    },
+    "fills": [
+      {
+        "$": {
+          "count": "1"
+        },
+        "fill": [
+          {
+            "patternFill": [
+              {
+                "$": {
+                  "patternType": "none"
+                }
+              }
+            ]
+          },
+          {
+            "patternFill": [
+              {
+                "$": {
+                  "patternType": "lightGray"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "fonts": {
       "$": {
-        "count": "1"
+        "count": "2"
       },
-      "font": []
+      "font": [
+        {
+          "color": [
+            {
+              "$": {
+                "rgb": "FF000000"
+              }
+            }
+          ],
+          "name": [
+            {
+              "$": {
+                "val": "Arial"
+              }
+            }
+          ],
+          "sz": [
+            {
+              "$": {
+                "val": "12.0"
+              }
+            }
+          ]
+        },
+        ""
+      ]
     },
     "numFmts": [
       {
         "$": {
-          "count": "0"
-        }
+          "count": "1"
+        },
+        "numFmt": [
+          {
+            "$": {
+              "formatCode": ";;;",
+              "numFmtId": "164"
+            }
+          }
+        ]
       }
     ]
   },
