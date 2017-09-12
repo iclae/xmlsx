@@ -87,7 +87,7 @@
               "applyFont": "1",
               "borderId": "0",
               "fillId": "0",
-              "fontId": "1",
+              "fontId": "0",
               "numFmtId": "0",
               "xfId": "0"
             },
@@ -119,7 +119,7 @@
     "fills": [
       {
         "$": {
-          "count": "1"
+          "count": "2"
         },
         "fill": [
           {

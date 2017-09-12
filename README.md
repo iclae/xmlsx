@@ -39,6 +39,13 @@ xmlsx = xml + xlsx
       @param [Number, Number] x,y start on 0
       @return [String] cell eg:'A1'
 
+* formatDate: format Date cell (将日期格式的cell值转换为Date)
+
+      @type tool
+      @param [Number|String] dateCellVal
+      @return [Date] date
+
+
 ## Example
 ### Make Xlsx
     var xmlsx = new Xmlsx()
@@ -78,3 +85,5 @@ xmlsx = xml + xlsx
 ### Tools
       Xmlsx.getCell(0, 0)   //-> 'A1'
       Xmlsx.getCell(1, 2)   //-> 'B3'
+
+      Xmlsx.formatDate(42735)  //-> Sun Jan 01 2017 00:00:00 GMT+0800 (CST) (2017/1/1)
