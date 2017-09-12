@@ -1,6 +1,6 @@
 {
   "name": "xmlsx",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "xmlsx can make & read xlsx with format",
   "main": "xmlsx.js",
   "keywords": ["xml", "xlsx", "excel", "node", "js"],
