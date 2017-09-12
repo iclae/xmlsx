@@ -87,3 +87,7 @@ xmlsx = xml + xlsx
       Xmlsx.getCell(1, 2)   //-> 'B3'
 
       Xmlsx.formatDate(42735)  //-> Sun Jan 01 2017 00:00:00 GMT+0800 (CST) (2017/1/1)
+
+### Current
+
+* windows write data wrong
