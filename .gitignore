@@ -15,4 +15,4 @@ node_modules
 *.xlsx
 
 # test
-local-test.js
+*.test.js
